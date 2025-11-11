@@ -1,10 +1,11 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { getDatabase } from '@/lib/mongodb';
 import { Customer } from '@/lib/types';
 
-export async function GET(request: NextRequest) {
+export async function GET(request: Request) {
   try {
-    const analystEmail = request.nextUrl.searchParams.get('analyst');
+    const { searchParams } = new URL(request.url);
+    const analystEmail = searchParams.get('analyst');
 
     if (!analystEmail) {
       return NextResponse.json({ error: 'Analyst email required' }, { status: 400 });
