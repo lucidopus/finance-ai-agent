@@ -55,21 +55,21 @@ export default function DashboardLayout({
                     : 'text-gray-300 hover:bg-gray-800/50 hover:text-white'
                 }`}
               >
-                <span className="mr-3">📊</span>
-                Analytics
+                <span className="mr-3">📋</span>
+                My Cases
               </a>
             </li>
             <li>
               <a
-                href="/dashboard/customers"
+                href="/dashboard/analytics"
                 className={`w-full flex items-center px-4 py-3 rounded-lg transition-all duration-300 font-medium ${
-                  pathname === '/dashboard/customers'
+                  pathname === '/dashboard/analytics'
                     ? 'bg-gradient-to-r from-green-600/20 to-green-500/20 text-white border border-green-500/30'
                     : 'text-gray-300 hover:bg-gray-800/50 hover:text-white'
                 }`}
               >
-                <span className="mr-3">👥</span>
-                Customers
+                <span className="mr-3">📊</span>
+                Analytics
               </a>
             </li>
           </ul>
