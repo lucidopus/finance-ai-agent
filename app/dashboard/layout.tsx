@@ -12,6 +12,9 @@ export default function DashboardLayout({
   const { user, loading } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
+  const isQueueRoute =
+    pathname === '/dashboard' || (pathname?.startsWith('/dashboard/customer') ?? false);
+  const isAnalyticsRoute = pathname?.startsWith('/dashboard/analytics') ?? false;
 
   useEffect(() => {
     if (!loading && !user) {
@@ -46,32 +49,32 @@ export default function DashboardLayout({
         </div>
         <nav className="flex-1 p-4">
           <ul className="space-y-2">
-            <li>
-              <a
-                href="/dashboard"
-                className={`w-full flex items-center px-4 py-3 rounded-lg transition-all duration-300 font-medium ${
-                  pathname === '/dashboard'
-                    ? 'bg-gradient-to-r from-blue-600/20 to-blue-500/20 text-white border border-blue-500/30'
-                    : 'text-gray-300 hover:bg-gray-800/50 hover:text-white'
-                }`}
-              >
-                <span className="mr-3">📊</span>
-                Analytics
-              </a>
-            </li>
-            <li>
-              <a
-                href="/dashboard/customers"
-                className={`w-full flex items-center px-4 py-3 rounded-lg transition-all duration-300 font-medium ${
-                  pathname === '/dashboard/customers'
-                    ? 'bg-gradient-to-r from-green-600/20 to-green-500/20 text-white border border-green-500/30'
-                    : 'text-gray-300 hover:bg-gray-800/50 hover:text-white'
-                }`}
-              >
-                <span className="mr-3">👥</span>
-                Customers
-              </a>
-            </li>
+             <li>
+               <a
+                 href="/dashboard"
+                 className={`w-full flex items-center px-4 py-3 rounded-lg transition-all duration-300 font-medium ${
+                   isQueueRoute
+                     ? 'bg-gradient-to-r from-green-600/20 to-green-500/20 text-white border border-green-500/30'
+                     : 'text-gray-300 hover:bg-gray-800/50 hover:text-white'
+                 }`}
+               >
+                 <span className="mr-3">📋</span>
+                 My Cases
+               </a>
+             </li>
+             <li>
+               <a
+                 href="/dashboard/analytics"
+                 className={`w-full flex items-center px-4 py-3 rounded-lg transition-all duration-300 font-medium ${
+                   isAnalyticsRoute
+                     ? 'bg-gradient-to-r from-blue-600/20 to-blue-500/20 text-white border border-blue-500/30'
+                     : 'text-gray-300 hover:bg-gray-800/50 hover:text-white'
+                 }`}
+               >
+                 <span className="mr-3">📈</span>
+                 Reports
+               </a>
+             </li>
           </ul>
         </nav>
         <div className="p-4 border-t border-gray-800/50">
