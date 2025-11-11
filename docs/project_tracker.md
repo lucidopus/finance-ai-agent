@@ -2,7 +2,7 @@
 
 **Project Start Date:** Nov 10, 2025
 **Target Completion:** Nov 10, 2025 (12 hours)
-**Current Phase:** Phase 5: Document Upload (Not Started)
+**Current Phase:** Phase 5: Document Upload (In Progress)
 
 ---
 
@@ -14,7 +14,7 @@
 | Phase 2: Database & MongoDB | ✅ Completed | 30-45 min | Nov 10, 2025 | MongoDB connection, User model, and database utilities |
 | Phase 3: Dashboard Layout | 🟡 In Progress | 45-60 min | - | Dashboard with sidebar navigation and interactive tabs |
 | Phase 4: Customer Queue | ✅ Completed | 60-90 min | Nov 11, 2025 | Queue UI + API |
-| Phase 5: Document Upload | ⬜ Not Started | 60-90 min | - | - |
+| Phase 5: Document Upload | 🟡 In Progress | 60-90 min | - | Core APIs + UI completed, awaiting storage validation |
 | Phase 6: LandingAI ADE | ⬜ Not Started | 60-90 min | - | - |
 | Phase 7: Risk Analysis Engine | ⬜ Not Started | 90-120 min | - | - |
 | Phase 8: Risk Report Display | ⬜ Not Started | 60-90 min | - | - |
@@ -145,30 +145,30 @@ None
 
 ## Phase 5: Document Upload Interface
 
-**Status:** ⬜ Not Started
-**Started:** -
+**Status:** 🟡 In Progress
+**Started:** Nov 11, 2025
 **Completed:** -
 
 ### Tasks Checklist
-- [ ] Create app/api/customers/[id]/route.ts (GET)
-- [ ] Create app/api/customers/[id]/route.ts (PATCH)
-- [ ] Create app/api/upload/route.ts (with Supabase Storage integration)
-- [ ] Create app/dashboard/customer/[id]/page.tsx
-- [ ] Add customer info display
-- [ ] Add document upload interface
-- [ ] Add file selection for primary ID
-- [ ] Add file selection for proof of address
-- [ ] Implement upload handler (uploads to Supabase Storage)
+- [x] Create app/api/customers/[id]/route.ts (GET)
+- [x] Create app/api/customers/[id]/route.ts (PATCH)
+- [x] Create app/api/upload/route.ts (with Supabase Storage integration)
+- [x] Create app/dashboard/customer/[id]/page.tsx
+- [x] Add customer info display
+- [x] Add document upload interface
+- [x] Add file selection for primary ID
+- [x] Add file selection for proof of address
+- [x] Implement upload handler (uploads to Supabase Storage)
 - [ ] Test file upload to Supabase Storage kyc-documents bucket
 - [ ] Verify file paths stored correctly in MongoDB
 - [ ] Verify customer status updates to "processing"
 - [ ] Test navigation back to dashboard
 
 ### Blockers
-None
+- Supabase credentials and MongoDB fixture data for documents are not available locally, so end-to-end upload verification is pending.
 
 ### Notes
-_Add any implementation notes or decisions here_
+- Added document upload experience with optimistic status updates and a placeholder call to `/api/process/[id]` that will be implemented in Phase 6.
 
 ---
 

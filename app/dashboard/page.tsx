@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Customer, CustomerStatus } from '@/lib/types';
 import { useAuth } from '@/lib/auth-context';
+import { Upload, Eye } from 'lucide-react';
 
 type DashboardCustomer = Omit<Customer, '_id'> & { _id: string };
 
@@ -184,13 +185,28 @@ export default function DashboardPage() {
                         <p className="text-sm text-gray-400">Documents</p>
                         <p className="text-lg font-semibold text-white">{customer.documents?.length || 0}</p>
                       </div>
-                      <Button
-                        onClick={() => router.push(`/dashboard/customer/${customer._id}`)}
-                        className="min-w-[160px]"
-                        variant={customer.status === 'pending_documents' ? 'default' : 'secondary'}
-                      >
-                        {customer.status === 'pending_documents' ? 'Upload Documents' : 'View Details'}
-                      </Button>
+                       <Button
+                         onClick={() => router.push(`/dashboard/customer/${customer._id}`)}
+                         className={`min-w-[160px] font-semibold transition-all duration-300 ${
+                           customer.status === 'pending_documents'
+                             ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 text-white border-0'
+                             : 'hover:bg-gray-700 hover:scale-102'
+                         }`}
+                         variant={customer.status === 'pending_documents' ? 'default' : 'secondary'}
+                         size={customer.status === 'pending_documents' ? 'lg' : 'default'}
+                       >
+                         {customer.status === 'pending_documents' ? (
+                           <>
+                             <Upload className="h-5 w-5 mr-1" />
+                             Upload Documents
+                           </>
+                         ) : (
+                           <>
+                             <Eye className="h-4 w-4" />
+                             View Details
+                           </>
+                         )}
+                       </Button>
                     </div>
                   </div>
                 );
