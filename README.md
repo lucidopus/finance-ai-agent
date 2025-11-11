@@ -1,4 +1,4 @@
-# Finance AI Agent
+# VerifAI
 
 An intelligent KYC automation platform that transforms how banks process customer onboarding documents. This system uses AI to extract data, assess risk, and guide analysts through decisions in minutes instead of hours.
 

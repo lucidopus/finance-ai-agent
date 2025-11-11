@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Finance AI Agent is an intelligent KYC automation platform that transforms how banks process customer onboarding documents. The system uses AI to extract data from documents, assess risk, and guide analysts through decisions in minutes instead of hours.
+VerifAI is an intelligent KYC automation platform that transforms how banks process customer onboarding documents. The system uses AI to extract data from documents, assess risk, and guide analysts through decisions in minutes instead of hours.
 
 **Key workflow**: Upload documents → AI processing/extraction → Automated screening → Risk assessment → Analyst review → Escalation or document request
 

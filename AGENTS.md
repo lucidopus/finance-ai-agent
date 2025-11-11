@@ -1,4 +1,4 @@
-# Agent Guidelines for Finance AI Agent
+# Agent Guidelines for VerifAI
 
 ## Commands
 - **Build**: `yarn build` (Next.js production build)
