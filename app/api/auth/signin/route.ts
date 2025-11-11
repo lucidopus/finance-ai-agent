@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import dbConnect from '@/lib/mongodb';
+import dbConnect from '@/lib/mongoose';
 import User from '@/lib/models/User';
 import { z } from 'zod';
 
